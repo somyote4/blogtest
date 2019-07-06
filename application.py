@@ -7,14 +7,13 @@ from flask import Flask
 
 def create_app(**config_overrides):
     app = Flask(__name__)
-    if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=PORT)
-    # Load config
-    #app.config.from_pyfile('settings.py')
 
-    # apply overrides for tests
+    #Load config
+    app.config.from_pyfile('settings.py')
+
+    #apply overrides for tests
     
-    #app.config.update(config_overrides)
+    app.config.update(config_overrides)
 
     # initialize db
     #db.init_app(app)
