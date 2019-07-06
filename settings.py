@@ -1,5 +1,11 @@
-    
+  
 import os
+
+workers = int(os.environ.get('GUNICORN_PROCESSES', '3'))
+threads = int(os.environ.get('GUNICORN_THREADS', '1'))
+
+forwarded_allow_ips = '*'
+secure_scheme_headers = { 'X-Forwarded-Proto': 'https' }
 
 #SECRET_KEY=os.environ['SECRET_KEY']
 #DB_USERNAME=os.environ['DB_USERNAME']
@@ -12,3 +18,4 @@ import os
 #MYSQL_ROOT_PASSWORD=os.environ['MYSQL_ROOT_PASSWORD']
 BLOG_NAME='Blog' #os.environ['BLOG_NAME']
 #BLOG_POST_IMAGES_PATH=os.environ['BLOG_POST_IMAGES_PATH']
+#SERVER_NAME='127.0.0.1'
