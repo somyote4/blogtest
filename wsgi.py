@@ -1,28 +1,4 @@
-#import os, sys
-#sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    
+from application import create_app
 
-#from flask_script import Manager, Server
-#from application import create_app
-#app = create_app()
-#manager = Manager(app)
-
-# Turn on debugger by default and reloader
-#manager.add_command("runserver", Server(
-#    use_debugger = True,
-#    use_reloader = True,
-#    host = os.getenv('IP', '0.0.0.0'),
-#    port = int(os.getenv('PORT', 8080)))
-#)
-
-#if __name__ == "__main__":
-#    manager.run()
-
-from flask import Flask
-application = Flask(__name__)
-
-@application.route("/")
-def hello():
-    return "test!"
-
-if __name__ == "__main__":
-    application.run()
+app = create_app()
